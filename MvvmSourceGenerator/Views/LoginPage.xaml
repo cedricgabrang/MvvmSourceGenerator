@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmSourceGenerator.Views.LoginPage"
+             xmlns:viewModel="clr-namespace:MvvmSourceGenerator.ViewModels"
+             x:DataType="viewModel:LoginViewModel"
+             Title="Login">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Entry Placeholder="Username" Text="{Binding UserName}"/>
+
+            <Entry IsPassword="True" Placeholder="Password" Text="{Binding Password}"/>
+
+            <Button
+                Text="Login"
+                Command="{Binding SubmitCommand}"
+                HorizontalOptions="FillAndExpand" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
